@@ -372,7 +372,6 @@ const [verify,setVerify] = useState(true)
 
    // sending otp to the client number
    const sendOTP = () => {
-     console.log(phone)
     fetch(`http://localhost:4444/api/sendotp?phonenumber=${phone}&channel=sms`,
         {
             method: "get",

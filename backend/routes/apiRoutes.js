@@ -50,9 +50,9 @@ router.post("/jobs", jwtAuth, (req, res) => {
     });
 });
 
-// router.get('/alljobs',(req,res)=>{
-//   Job.find({}).then(result=>res.json(result))
-// })
+router.get('/alljobs',(req,res)=>{
+  Job.find({}).then(result=>res.json(result))
+})
 
 
 // to get all the jobs [pagination] [for recruiter personal and for everyone]

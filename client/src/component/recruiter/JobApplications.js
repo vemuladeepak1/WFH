@@ -566,10 +566,10 @@ console.log(props)
   return (
     <Paper className={classes.jobTileOuter} elevation={3}>
       <Grid container>
-      {/* <Avatar
+      <Avatar
             src={application.jobApplicant.profile}
             className={classes.avatar}
-          /> */}
+          />
         <Grid
           item
           xs={2}
@@ -582,7 +582,7 @@ console.log(props)
           
           {/* <img src={application.jobApplicant.profile} /> */}
         </Grid>
-        <Grid container item xs={7} spacing={1} direction="column">
+        <Grid container item xs={5} spacing={1} direction="column">
           <Grid item>
             <Typography variant="h5">
               {application.jobApplicant.name}

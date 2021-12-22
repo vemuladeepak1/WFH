@@ -14,6 +14,7 @@ const FileUploadInput = (props) => {
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const filetype=["application/pdf"]
   const Imagefiletype=["image/jpg","image/jpeg","image/png"]
+
   const handleUpload = () => {
     
     if(identifier ==="resume"){
@@ -35,7 +36,7 @@ const FileUploadInput = (props) => {
           },
         })
           .then((response) => {
-            console.log(response)
+            // console.log(response.data)
             handleInput(identifier, response.data.url);
             setPopup({
               open: true,

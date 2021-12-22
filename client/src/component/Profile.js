@@ -113,8 +113,10 @@ const Profile = (props) => {
     name: "",
     education: [],
     skills: [],
-    resume: "",
+    resume: [],
     profile: "",
+    email:"",
+    Filename:""
   });
 
   const [education, setEducation] = useState([
@@ -126,9 +128,10 @@ const Profile = (props) => {
   ]);
 
   const handleInput = (key, value) => {
+    console.log(value)
     setProfileDetails({
       ...profileDetails,
-      [key]: value,
+      [key]: value
     });
   };
 
@@ -157,7 +160,7 @@ const Profile = (props) => {
         }
       })
       .catch((err) => {
-        console.log(err.response.data);
+        // console.log(err.response.data);
         setPopup({
           open: true,
           severity: "error",
@@ -248,6 +251,16 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+              <Grid item>
+                <TextField
+                  label="Email"
+                  value={profileDetails.email}
+                  onChange={(event) => handleInput("Email", event.target.value)}
+                  className={classes.inputBox}
+                  variant="outlined"
+                  fullWidth
+                />
+              </Grid>
               <MultifieldInput
                 education={education}
                 setEducation={setEducation}
@@ -276,6 +289,7 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+               
               <Grid item>
                 <FileUploadInput
                   className={classes.inputBox}
@@ -284,9 +298,10 @@ const Profile = (props) => {
                   uploadTo={apiList.uploadResume}
                   handleInput={handleInput}
                   identifier={"resume"}
+                 
                 />
               </Grid>
-              {/* <Grid item>
+              <Grid item>
                 <FileUploadInput
                   className={classes.inputBox}
                   label="Profile Photo (.jpg/.png)"
@@ -295,7 +310,7 @@ const Profile = (props) => {
                   handleInput={handleInput}
                   identifier={"profile"}
                 />
-              </Grid> */}
+              </Grid>
             </Grid>
             <Button
               variant="contained"
